@@ -1,27 +1,29 @@
 name: CI/CD Workflow
 
 on:
-
-push:
-
-branches:
-
-- main
+  push:
+    branches:
+      - main
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     name: Build and Test
 
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-    - uses: actions/checkout@v3
+    - name: Install Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '19' # You can change this to your preferred Node.js version
 
-    - uses: bahmutov/npm-install@v1
+    - name: Install dependencies
+      run: npm install
 
-    - run: npm run lint
+    - name: Run ESLint
+      run: npm run lint
 
-    - run: npm run test
+    - name: Run Jest tests
+      run: npm run test
