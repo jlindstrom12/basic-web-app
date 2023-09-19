@@ -45,10 +45,10 @@ describe("QueryProcessor", () => {
     });
 
     test('should return my name', () => {
-        const query = "name?";
+        const query = "What is 98 multiplied by 73?";
         const response: string = QueryProcessor(query);
         expect(response).toBe((
-            "Jonathan Lindstrom"
+            "7154"
           ));
     });
 });

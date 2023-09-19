@@ -35,6 +35,22 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
+  if (query.toLowerCase().includes("multiplied")) {
+    const addMatch = query.match(/What is (\d+) multiplied by (\d+)/);
+    var ans = "";
+    if (addMatch) {
+      const x: number = parseInt(addMatch[1]);
+      const y: number = parseInt(addMatch[2]);
+      ans = (x*y).toString();
+    }
+    else{
+      ans = "";
+    }
+    return (
+      ans
+    );
+  }
+
   if (query.toLowerCase().includes("andrew")) {
     return (
       "Jmlindst"
