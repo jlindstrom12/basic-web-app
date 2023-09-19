@@ -59,7 +59,27 @@ export default function QueryProcessor(query: string): string {
     if (addMatch) {
       const x: number = parseInt(addMatch[1]);
       const y: number = parseInt(addMatch[2]);
-      const z: number = parseInt(addMatch[2]);
+      const z: number = parseInt(addMatch[3]);
+      ans = Math.max(z,Math.max(x,y)).toString();
+    }
+    else{
+      ans = "";
+    }
+    return (
+      ans
+    );
+  }
+
+  // Which of the following numbers are primes: 2, 89, 91, 85, 83?
+
+  if (query.toLowerCase().includes("primes")) {
+    const addMatch = query.match(/Which of the following numbers are primes: (\d+), (\d+), (\d+), (\d+), (\d+)/);
+    var ans = "";
+    if (addMatch) {
+      const x: number = parseInt(addMatch[1]);
+      const y: number = parseInt(addMatch[2]);
+      const z: number = parseInt(addMatch[3]);
+      
       ans = Math.max(z,Math.max(x,y)).toString();
     }
     else{
