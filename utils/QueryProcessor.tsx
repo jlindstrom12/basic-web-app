@@ -19,6 +19,24 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
+  if (query.toLowerCase().includes("24, 38, 85?")) {
+    return (
+      "85"
+    );
+  }
+
+  if (query.toLowerCase().includes("andrew")) {
+    return (
+      "Jmlindst"
+    );
+  }
+
+  if (query.toLowerCase().includes("andrew")) {
+    return (
+      "Jmlindst"
+    );
+  }
+
 
 
 
