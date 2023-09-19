@@ -19,9 +19,19 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
-  if (query.toLowerCase().includes("24, 38, 85?")) {
+  if (query.toLowerCase().includes("plus")) {
+    const addMatch = query.match(/What is (\d+) plus (\d+)/);
+    var ans = "";
+    if (addMatch) {
+      const x: number = parseInt(addMatch[1]);
+      const y: number = parseInt(addMatch[2]);
+      ans = (x+y).toString();
+    }
+    else{
+      ans = "";
+    }
     return (
-      "85"
+      ans
     );
   }
 

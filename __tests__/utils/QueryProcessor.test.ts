@@ -34,19 +34,13 @@ describe("QueryProcessor", () => {
           ));
     });
 
-    test('should return my 85', () => {
-        const query = " 24, 38, 85?";
-        const response: string = QueryProcessor(query);
-        expect(response).toBe((
-            "85"
-          ));
-    });
+  
 
-    test('should return my name', () => {
-        const query = "name?";
+    test('should return my num', () => {
+        const query = "What is 20 plus 67?";
         const response: string = QueryProcessor(query);
         expect(response).toBe((
-            "Jonathan Lindstrom"
+            "87"
           ));
     });
 
