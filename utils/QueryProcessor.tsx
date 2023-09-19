@@ -51,6 +51,25 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
+  // Which of the following numbers is the largest: 13, 30, 1?
+
+  if (query.toLowerCase().includes("largest")) {
+    const addMatch = query.match(/Which of the following numbers is the largest: (\d+), (\d+), (\d+)/);
+    var ans = "";
+    if (addMatch) {
+      const x: number = parseInt(addMatch[1]);
+      const y: number = parseInt(addMatch[2]);
+      const z: number = parseInt(addMatch[2]);
+      ans = Math.max(z,Math.max(x,y)).toString();
+    }
+    else{
+      ans = "";
+    }
+    return (
+      ans
+    );
+  }
+
   if (query.toLowerCase().includes("andrew")) {
     return (
       "Jmlindst"

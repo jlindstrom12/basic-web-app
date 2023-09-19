@@ -51,5 +51,14 @@ describe("QueryProcessor", () => {
             "7154"
           ));
     });
+   
+
+    test('should return my name', () => {
+        const query = "Which of the following numbers is the largest: 13, 30, 1?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "30"
+          ));
+    });
 });
 
