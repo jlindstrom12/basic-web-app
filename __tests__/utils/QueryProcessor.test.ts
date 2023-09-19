@@ -53,11 +53,14 @@ describe("QueryProcessor", () => {
     });
    
 
+   
+
+    
     test('should return my name', () => {
-        const query = "Which of the following numbers is the largest: 13, 30, 1?";
+        const query = "Which of the following numbers is both a square and a cube: 470, 3356, 625, 1723, 64, 2543?";
         const response: string = QueryProcessor(query);
         expect(response).toBe((
-            "30"
+            "64"
           ));
     });
 });
