@@ -50,6 +50,23 @@ export default function QueryProcessor(query: string): string {
       ans
     );
   }
+  // What is 68 minus 79?
+
+  if (query.toLowerCase().includes("minus")) {
+    const addMatch = query.match(/What is (\d+) minus (\d+)/);
+    var ans = "";
+    if (addMatch) {
+      const x: number = parseInt(addMatch[1]);
+      const y: number = parseInt(addMatch[2]);
+      ans = (x-y).toString();
+    }
+    else{
+      ans = "";
+    }
+    return (
+      ans
+    );
+  }
 
   // Which of the following numbers is the largest: 13, 30, 1?
 

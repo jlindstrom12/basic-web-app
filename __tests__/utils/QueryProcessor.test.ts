@@ -36,7 +36,7 @@ describe("QueryProcessor", () => {
 
   
 
-    test('should return my num', () => {
+    test('should return plus', () => {
         const query = "What is 20 plus 67?";
         const response: string = QueryProcessor(query);
         expect(response).toBe((
@@ -44,11 +44,19 @@ describe("QueryProcessor", () => {
           ));
     });
 
-    test('should return my name', () => {
+    test('should return multplied', () => {
         const query = "What is 98 multiplied by 73?";
         const response: string = QueryProcessor(query);
         expect(response).toBe((
             "7154"
+          ));
+    });
+
+    test('should return multplied', () => {
+        const query = "What is 98 minus 73?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "-11"
           ));
     });
    
